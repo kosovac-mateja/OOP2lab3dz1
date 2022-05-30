@@ -1,6 +1,7 @@
 package svemir;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
 
 public abstract class Objekat {
 	protected int centarX, centarY;

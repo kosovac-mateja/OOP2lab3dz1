@@ -1,6 +1,7 @@
 package svemir;
 
-import java.awt.*;
+import java.awt.Canvas;
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -21,12 +22,7 @@ public class Svemir extends Canvas implements Runnable{
 
 		for (Iterator<NebeskoTelo> it = nebTela.iterator(); it.hasNext();) {
 		    NebeskoTelo nt = it.next();
-		    
-		    if (nt.dohvCentarY() > 500)
-		        it.remove();  
-		    
-		    else
-		    	nt.iscrtaj(getGraphics());
+		    nt.iscrtaj(getGraphics());
 		}
 	}
 	
@@ -47,11 +43,13 @@ public class Svemir extends Canvas implements Runnable{
 			nit.sleep(100);
 		} catch (InterruptedException e) {}
 		
-		for(NebeskoTelo nt : nebTela)
-			nt.pomeriY(5);
+		for (Iterator<NebeskoTelo> it = nebTela.iterator(); it.hasNext();) {
+		    NebeskoTelo nt = it.next();
+		    nt.pomeriY(5);
+		}
 		
 		repaint();
-		
+				
 		synchronized (this) {
 			nit = null;
 			notify(); 

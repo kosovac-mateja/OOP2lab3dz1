@@ -21,6 +21,8 @@ public class Simulator extends Frame {
 		
 		pokreniDugme.addActionListener((ae) -> {
 			gen.pokreni();
+			
+			pokreniDugme.setEnabled(false);
 		});
 		
 		Panel donjiPanel = new Panel();
@@ -39,6 +41,7 @@ public class Simulator extends Frame {
 		
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
+				gen.zavrsi();
 				dispose();
 			}
 		});

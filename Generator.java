@@ -1,6 +1,5 @@
 package svemir;
 
-import java.awt.*;
 import java.util.Random;
 
 public class Generator extends Thread{
@@ -27,7 +26,7 @@ public class Generator extends Thread{
 	
 	@Override
 	public void run() {
-		while(true) {
+		while(!interrupted() && pokrenuto) {
 			int x = new Random().nextInt(200);
 			int y = 0;
 			int r = new Random().nextInt(10, 30);
@@ -37,6 +36,7 @@ public class Generator extends Thread{
 			try {
 				sleep(900);
 			} catch (InterruptedException e) { }
+			
 		}
 	}
 	

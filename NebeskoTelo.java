@@ -1,6 +1,6 @@
 package svemir;
 
-import java.awt.*;
+import java.awt.Color;
 
 public abstract class NebeskoTelo extends Objekat{
 	
